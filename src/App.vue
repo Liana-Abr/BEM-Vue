@@ -1,11 +1,12 @@
 <template>
-  <page-header></page-header>
+ <page-header></page-header>
   <main-page></main-page>
 </template>
 
 <script>
-  import Header from "@/components/header";
+
   import Main from "@/components/Main";
+  import Header from "@/components/Header";
 
   export default {
     name: 'App',
@@ -22,7 +23,7 @@
 </script>
 <style>
 body{
-  min-width: 600px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 

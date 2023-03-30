@@ -1,6 +1,6 @@
 <template>
   <header>
-    <p>Logo</p>
+    <p>SneakersShop</p>
   </header>
 </template>
 <script>

@@ -2,8 +2,8 @@ import { createApp } from 'vue';
 import {createRouter, createWebHistory } from "vue-router"
 
 import Home from "@/components/Home/index";
-import Login from "@/components/Login/index";
-import Auth from "@/components/Auth/index";
+// import Login from "@/components/Login/index";
+// import Auth from "@/components/Auth/index";
 
 
 const routes = [

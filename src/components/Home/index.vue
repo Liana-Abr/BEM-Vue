@@ -8,16 +8,11 @@ export default {
   name: "home-page",
   data () {
     return {
-      posts: [
-        {id: 1, title: "UX/UI Design", subtitle: "Дизайн и проектирование пользовательского интерфейса"},
-        {id: 2, title: "Mobile", subtitle: "Мобильный дизайн"},
-        {id: 3, title: "Print", subtitle: "Принт"},
-        {id: 4, title: "Typography", subtitle: "Искусство оформления печатного текста"}
-      ]
+
     }
   },
   components:{
-    "people-categories": Categories
+
   }
 }
 </script>

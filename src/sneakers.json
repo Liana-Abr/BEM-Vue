@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "name": "Nike Air Force 1",
+    "image": "https://kicksmania.ru/wp-content/uploads/2022/06/nike-air-force-1-low-white.jpg",
+    "price": "17000"
+  },
+  {
+    "id": "2",
+    "name": "Puma RS-X3",
+    "image": "https://with.com.ru/wp-content/uploads/2021/06/Кроссовки-Puma-RS-X3-Puzzle-купить-оригинал1.jpg",
+    "price": "11990"
+  },
+  {
+    "id": "3",
+    "name": "Yeezy Boost 700 Wave Runner",
+    "image": "https://cdn.shopify.com/s/files/1/0015/6123/1434/products/ShoeGrabAdidasYeezyBoost700WaveRunner2.png?v=1653538469",
+    "price": "35000"
+  },
+  {
+    "id": "4",
+    "name": "Reebok Classic Club C85",
+    "image": "https://cdek.shopping/storage/products/krossovki-reebok-classic-club-c-85-belyi/69937d75bc654a1db570c1170440df08.jpg",
+    "price": "9900"
+  },
+  {
+    "id": "5",
+    "name": "New Balance 530",
+    "image": "https://newbalance.ru/upload/resize_cache/iblock/b99/992_992_2/mr530sg_nb_02_i.jpg",
+    "price": "22000"
+  },
+  {
+    "id": "6",
+    "name": "Converse Chuck Taylor",
+    "image": "https://fridaywear.ru/upload/iblock/d71/58jspwoh7ox2r1vio6tp29f1jir195v7.jpg",
+    "price": "14000"
+  },
+  {
+    "id": "7",
+    "name": "Nike Dunk Low",
+    "image": "https://sneakers-type.ru/wp-content/uploads/2021/07/Krossovki-Nike-Dunk-Low-Black-White-e1630305098390.jpg",
+    "price": "20000"
+  },
+  {
+    "id": "8",
+    "name": "Vans Old Skool",
+    "image": "https://static.street-beat.ru/upload/iblock/456/45669404bd492d0176088ba8dbbb7cbb.jpg",
+    "price": "5000"
+  },
+  {
+    "id": "9",
+    "name": "Lacoste",
+    "image": "https://lacoste.ru/upload/resize_cache/catalog/800_800_1/743SFA00241T3.jpg",
+    "price": "14980"
+  },
+  {
+    "id": "10",
+    "name": "Calvin Klein Jeans",
+    "image": "https://static.rendez-vous.ru/files/catalog_models/resize_640x630/2/2408234_krossovki_calvin_klein_jeans_meadow_belyy_kozha_natural_naya.JPG",
+    "price": "12240"
+  }
+]
