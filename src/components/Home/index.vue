@@ -1,108 +1,107 @@
 <template>
   <div class="container">
-    <h1>Hello</h1>
+    <div class="container__banner"></div>
+    <div class="container__cards" >
+      <div class="container__cards-item"
+           v-for="card in data"
+           :key="card.id"
+           :class="card.setFav ? 'on' : 'off'"
+      >
+        <div class="container__cards-item-image" :style="{backgroundImage: `url(${card.image })`}" ></div>
+        <div class="container__cards-item-title">
+          {{card.name}}
+        </div>
+        <div class="container__cards-item-price">
+          {{card.price}}₽
+        </div>
+        <div class="container__cards-buttons">
+          <button class="container__cards-button button__add">
+            <i class="bi bi-bag-plus"></i>
+          </button>
+
+          <button @click="card.show = !card.show" class="container__cards-button button__like-false">
+            <i v-show="!card.show" class="bi bi-heart"></i>
+            <i v-show="card.show" class="bi bi-heart-fill"></i>
+          </button>
+
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 <script>
+import jsonData from "../../sneakers.json"
 export default {
   name: "home-page",
   data () {
     return {
-
+      data: jsonData,
+      // items: [],
+      setFav: false,
     }
   },
-  components:{
+  methods:{
 
   }
 }
 </script>
 
 <style scoped>
-.categories{
-  display: inline-block;
-  flex-direction: row;
-  font-size: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-}
-.banner {
+.container__cards{
   position: relative;
-  height: 64vh;
-  display: flex;
-  flex-direction: column;
+  left: 4%;
   justify-content: center;
   align-items: center;
-}
-
-.questions{
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  left: 15%;
-  height: 40vh;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4,500px);
+  gap: 100px;
 }
-.questions>div{
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  color: black;
-  width: 300px;
-  height: 50px;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-h2{
+.container__cards-item{
+  width: 350px;
+  height: 350px;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  margin: 100px 0 10px 0;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.container__cards-item-image{
+  width: 250px;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.container__cards-item-title{
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px;
 }
 
-.slider {
-  position: relative;
-  width: 90%;
-  overflow: hidden;
-}
-.images {
+.container__cards-buttons{
   display: flex;
-  width: 100%;
+  font-size: 25px;
+  gap: 50px;
+  margin-top: 20px;
 }
-.images img {
-  height: 500px;
-  width: 100%;
-  transition: all 0.15s ease;
-  background-color: #eef1f0;
-}
-.images input {
-  display: none;
-}
-.cubes {
-  display: flex;
-  justify-content: center;
-  margin: 5px;
-}
-.cubes label {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  border: solid lightgray 3px;
+.button__add, .button__like-false{
+  width: 70px;
+  font-size: 25px;
   cursor: pointer;
-  transition: all 0.15s ease;
-  margin: 5px;
+  height: 70px;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: transparent;
 }
-.cubes label:hover {background: #e3fe52;}
-#img1:checked ~ .m1 {
-  margin-left: 0;
+/*.button__like-true{*/
+/*  display: none;*/
+/*}*/
+.container__cards-item-price{
+  font-size: 30px;
 }
-#img2:checked ~ .m2 {
-  margin-left: -70%;
-}
-#img3:checked ~ .m3 {
-  margin-left: -170%;
-}
-
 </style>
