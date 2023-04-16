@@ -2,8 +2,6 @@
   <header class="header">
     <p class="header__logo">Shop</p>
     <nav class="header__nav">
-      <router-link class="header__nav-item" to="#">категории</router-link>
-      <router-link class="header__nav-item" to="#">поиск</router-link>
       <router-link class="header__nav-item-cart-btn" to="#">
         <i class="bi bi-bag"></i>
       </router-link>

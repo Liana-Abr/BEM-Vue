@@ -1,13 +1,32 @@
 <template>
+<!--
+.container
+  .search__container
+    .search__container-text
+    .search__container-input
+  .container__cards
+    .container__cards-item
+    .container__cards-item-image
+    .container__cards-item-title
+    .container__cards-item-price
+    .container__cards-buttons
+      .container__cards-button-button__add
+      .container__cards-button-button__like
+-->
   <div class="container">
-    <div class="container__banner"></div>
+    <div class="search__container">
+      <p class="search__container-text">Поиск</p>
+      <input class="search__container-input" v-model="searchShoes" type="Text" placeholder="Введите название">
+    </div>
+
     <div class="container__cards" >
       <div class="container__cards-item"
-           v-for="card in data"
-           :key="card.id"
-           :class="card.setFav ? 'on' : 'off'"
+           v-for="(card, index) in filteredShoes"
+           :key="index"
       >
-        <div class="container__cards-item-image" :style="{backgroundImage: `url(${card.image })`}" ></div>
+        <div class="container__cards-item-image"
+             :style="{backgroundImage: `url(${card.image })`}"
+        ></div>
         <div class="container__cards-item-title">
           {{card.name}}
         </div>
@@ -15,16 +34,14 @@
           {{card.price}}₽
         </div>
         <div class="container__cards-buttons">
-          <button class="container__cards-button button__add">
+          <button class="container__cards-button-button__add">
             <i class="bi bi-bag-plus"></i>
           </button>
 
-          <button @click="card.show = !card.show" class="container__cards-button button__like-false">
+          <button @click="card.show = !card.show" class="container__cards-button-button__like">
             <i v-show="!card.show" class="bi bi-heart"></i>
             <i v-show="card.show" class="bi bi-heart-fill"></i>
           </button>
-
-
         </div>
       </div>
     </div>
@@ -38,12 +55,16 @@ export default {
   data () {
     return {
       data: jsonData,
-      // items: [],
-      setFav: false,
+      searchShoes: ""
     }
   },
-  methods:{
-
+  computed:{
+    filteredShoes(){
+      //фильтр по индексу товаров
+      return this.data.filter(card =>{
+        return card.name.toUpperCase().indexOf(this.searchShoes.toUpperCase()) !== -1
+      })
+    }
   }
 }
 </script>
@@ -60,7 +81,6 @@ export default {
 }
 .container__cards-item{
   width: 350px;
-  height: 350px;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -72,7 +92,7 @@ export default {
 }
 .container__cards-item-image{
   width: 250px;
-  height: 200px;
+  height: 250px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -89,7 +109,7 @@ export default {
   gap: 50px;
   margin-top: 20px;
 }
-.button__add, .button__like-false{
+.container__cards-button-button__add, .container__cards-button-button__like{
   width: 70px;
   font-size: 25px;
   cursor: pointer;
@@ -98,10 +118,30 @@ export default {
   border-radius: 10px;
   background-color: transparent;
 }
-/*.button__like-true{*/
-/*  display: none;*/
-/*}*/
+.container__cards-button-button__like .bi-heart-fill{
+  color: red;
+}
 .container__cards-item-price{
   font-size: 30px;
+}
+.search__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 100px 0;
+}
+.search__container-text{
+  font-size: 25px;
+  font-weight: bold;
+}
+.search__container-input{
+  width: 400px;
+  height: 50px;
+  outline: none;
+  font-size: 25px;
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 10px;
 }
 </style>
