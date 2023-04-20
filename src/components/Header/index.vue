@@ -1,12 +1,10 @@
 <template>
+<!--
+.header
+  .header__logo
+-->
   <header class="header">
     <p class="header__logo">Shop</p>
-    <nav class="header__nav">
-      <router-link class="header__nav-item-cart-btn" to="#">
-        <i class="bi bi-bag"></i>
-      </router-link>
-    </nav>
-<!--    <p class="header__links">Главная</p>-->
   </header>
 </template>
 <script>
@@ -18,7 +16,8 @@ export default {
 .header{
   display: flex;
   font-size: 25px;
-  justify-content: space-around;
+  justify-content: center;
+  text-transform: uppercase;
   align-items: center;
   border-bottom: 2px solid grey;
 }

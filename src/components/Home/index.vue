@@ -1,44 +1,44 @@
 <template>
 <!--
 .container
-  .search__container
-    .search__container-text
-    .search__container-input
+  .container__search
+    .container__search-text
+    .container__search-input
   .container__cards
-    .container__cards-item
-    .container__cards-item-image
-    .container__cards-item-title
-    .container__cards-item-price
-    .container__cards-buttons
-      .container__cards-button-button__add
-      .container__cards-button-button__like
+    .container__cards__item
+    .container__cards__item__image
+    .container__cards__item__title
+    .container__cards__item__price
+    .container__cards__buttons
+      .container__cards__button__button-add
+      .container__cards__button__button-like
 -->
   <div class="container">
-    <div class="search__container">
-      <p class="search__container-text">Поиск</p>
-      <input class="search__container-input" v-model="searchShoes" type="Text" placeholder="Введите название">
+    <div class="container__search">
+      <p class="container__search-text">Поиск</p>
+      <input class="container__search-input" v-model="searchShoes" type="Text" placeholder="Введите название">
     </div>
 
     <div class="container__cards" >
-      <div class="container__cards-item"
+      <div class="container__cards__item"
            v-for="(card, index) in filteredShoes"
            :key="index"
       >
-        <div class="container__cards-item-image"
+        <div class="container__cards__item-image"
              :style="{backgroundImage: `url(${card.image })`}"
         ></div>
-        <div class="container__cards-item-title">
+        <div class="container__cards__item-title">
           {{card.name}}
         </div>
-        <div class="container__cards-item-price">
+        <div class="container__cards__item-price">
           {{card.price}}₽
         </div>
         <div class="container__cards-buttons">
-          <button class="container__cards-button-button__add">
+          <button class="container__cards__button__button-add">
             <i class="bi bi-bag-plus"></i>
           </button>
 
-          <button @click="card.show = !card.show" class="container__cards-button-button__like">
+          <button @click="card.show = !card.show" class="container__cards-button-button-like">
             <i v-show="!card.show" class="bi bi-heart"></i>
             <i v-show="card.show" class="bi bi-heart-fill"></i>
           </button>
@@ -79,7 +79,7 @@ export default {
   grid-template-columns: repeat(4,500px);
   gap: 100px;
 }
-.container__cards-item{
+.container__cards__item{
   width: 350px;
   padding: 20px;
   display: flex;
@@ -90,14 +90,14 @@ export default {
   border-radius: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.container__cards-item-image{
+.container__cards__item-image{
   width: 250px;
   height: 250px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
-.container__cards-item-title{
+.container__cards__item-title{
   font-size: 25px;
   font-weight: bold;
   padding: 20px;
@@ -121,21 +121,21 @@ export default {
 .container__cards-button-button__like .bi-heart-fill{
   color: red;
 }
-.container__cards-item-price{
+.container__cards__item-price{
   font-size: 30px;
 }
-.search__container{
+.container__search{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 15px 0 100px 0;
 }
-.search__container-text{
+.container__search-text{
   font-size: 25px;
   font-weight: bold;
 }
-.search__container-input{
+.container__search-input{
   width: 400px;
   height: 50px;
   outline: none;
